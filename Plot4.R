@@ -23,18 +23,18 @@ Sys.setlocale("LC_TIME", "en_US") #setting the plot language to English
 
 
 # Plot 4 - gathering wall plots
-
+par(mfrow = c(2,2), mar = c(4,4,2,1))
 par(las = 1)
-par(mfrow = c(2,2), mar = c(4,4,2,1) )
 #a) Plot1
-hist(x =as.numeric(base_1$Global_active_power), col = "red", main = "Global Active Power", 
-     xlab = "Global Active Power (kilowatts)")
-
-
-#b) Plot2
 plot(x = strptime(base_1$date_time, "%Y-%m-%d %H:%M:%S"), y = base_1$Global_active_power, type = "l",
      ylab = "Global Active Power (kilowatts)",
      xlab = "")
+
+
+#b)
+plot(x = strptime(base_1$date_time, "%Y-%m-%d %H:%M:%S"), y = base_1$Voltage, type = "l",
+     ylab = "Voltage",
+     xlab = "datetime")
 
 
 #c) Plot3
